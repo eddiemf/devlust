@@ -66,4 +66,8 @@ export default IndexPage;
 
 const PostsSection = styled.section`
   padding-top: 100px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 20px;
+  }
 `;

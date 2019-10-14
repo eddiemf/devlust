@@ -11,9 +11,7 @@ const Header: FunctionComponent = () => {
         <Link to="/">
           <DevLustLogo width={200} />
         </Link>
-        <HeaderNav>
-          {/* <Link to="/info">Info</Link> */}
-        </HeaderNav>
+        <HeaderNav>{/* <Link to="/info">Info</Link> */}</HeaderNav>
       </HeaderContainer>
     </StyledHeader>
   );
@@ -26,6 +24,10 @@ const StyledHeader = styled.header`
   align-items: center;
   height: ${headerHeight}px;
   padding: 0 40px;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;
+  }
 `;
 
 const HeaderContainer = styled.div`
