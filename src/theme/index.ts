@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 
+import { brandColor } from './colors';
+
 export const GlobalStyles = createGlobalStyle`
   ${styledNormalize}
 
@@ -27,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   a {
     display: inline-block;
     text-decoration: none;
-    color: inherit;
+    color: ${brandColor};
     transition: all 200ms;
   }
 
