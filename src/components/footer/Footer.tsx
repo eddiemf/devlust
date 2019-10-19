@@ -8,12 +8,11 @@ const Footer = () => {
   return (
     <StyledFooter>
       <Container>
-        <p>
-          © {new Date().getFullYear()} - Built with{' '}
-          <GatsbyLink href="https://www.gatsbyjs.org" target="_blank">
-            Gatsby ️❤️
-          </GatsbyLink>
-        </p>
+        <span>© {new Date().getFullYear()} - Built with </span>
+        <GatsbyLink href="https://www.gatsbyjs.org" target="_blank">
+          Gatsby
+        </GatsbyLink>
+        <span> ❤️</span>
       </Container>
     </StyledFooter>
   );
@@ -33,6 +32,8 @@ const StyledFooter = styled.footer`
 `;
 
 const GatsbyLink = styled.a`
+  display: inline;
+
   &:hover {
     color: ${brandColor};
   }

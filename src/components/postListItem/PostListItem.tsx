@@ -109,6 +109,8 @@ const PostTitle = styled.h1`
 `;
 
 const PostTitleLink = styled(Link)`
+  color: #333;
+
   &:hover {
     color: ${brandColor};
   }
@@ -121,6 +123,8 @@ const PostDate = styled.p`
 `;
 
 const PostDateLink = styled(Link)`
+  color: #333;
+
   &:hover {
     color: ${brandColorLight};
   }
