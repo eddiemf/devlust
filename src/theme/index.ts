@@ -4,6 +4,10 @@ import styledNormalize from 'styled-normalize';
 export const GlobalStyles = createGlobalStyle`
   ${styledNormalize}
 
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
   html {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
