@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     line-height: 1;
     color: #333;
 
@@ -23,7 +23,8 @@ export const GlobalStyles = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
-    font-size: inherit;
+    font-size: 30px;
+    font-weight: 900;
   }
 
   a {
