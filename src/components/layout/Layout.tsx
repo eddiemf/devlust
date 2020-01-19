@@ -11,7 +11,7 @@ const Layout: FunctionComponent = ({ children }) => {
     <LayoutBase>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css?family=Lato:400,700,700i|Montserrat:300,300i,400,700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Lato:400,900|Montserrat:400,400i,700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
