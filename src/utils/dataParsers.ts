@@ -1,7 +1,3 @@
-export const parsePostsData = (postsData: any): [Post] => {
-  return postsData.edges.map(({ node }: any) => parsePostNode(node));
-};
-
 export const parsePostNode = ({ html, frontmatter }: any): Post => ({
   html: html,
   title: frontmatter.title,
@@ -11,3 +7,7 @@ export const parsePostNode = ({ html, frontmatter }: any): Post => ({
   image: frontmatter.image,
   thumbnail: frontmatter.thumbnail,
 });
+
+export const parsePostsData = (postsData: any): [Post] => {
+  return postsData.edges.map(({ node }: any) => parsePostNode(node));
+};

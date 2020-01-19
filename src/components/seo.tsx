@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import logo from '../../static/devlust.jpg';
 
 interface Meta {
   name: string;
@@ -55,6 +56,10 @@ const SEO: FunctionComponent<Props> = ({
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: logo,
         },
         {
           property: `og:type`,
