@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'gatsby';
-import Image from 'gatsby-image';
+import React from 'react';
 import styled from 'styled-components';
-
-import { brandColor, brandColorLight } from '../../theme/colors';
+import { brandColor } from '../../theme/colors';
+import DateFormatter from './DateFormatter';
 
 interface PostListItemProps {
   title: string;
@@ -17,37 +16,20 @@ interface PostListItemProps {
   };
 }
 
-const PostListItem = ({
-  title,
-  date,
-  slug,
-  excerpt,
-  thumbnail,
-}: PostListItemProps) => {
-  const link = `/${slug}`;
+const PostListItem = ({ title, date, slug, excerpt }: PostListItemProps) => {
+  const dateFormatter = new DateFormatter({ date });
   return (
     <li>
       <PostArticle>
         <PostHeader>
-          <Link to={link} title={title}>
-            <Image
-              style={{ display: 'block' }}
-              fixed={thumbnail.childImageSharp.fixed}
-            />
-          </Link>
-
           <TitleContainer>
             <PostTitle>
-              <PostTitleLink to={link} title={title}>
+              <PostTitleLink to={`/${slug}`} title={title}>
                 {title}
               </PostTitleLink>
             </PostTitle>
 
-            <PostDate>
-              <PostDateLink to={link} title={title}>
-                {date}
-              </PostDateLink>
-            </PostDate>
+            <PostDate>{dateFormatter.format()}</PostDate>
           </TitleContainer>
         </PostHeader>
 
@@ -60,19 +42,18 @@ const PostListItem = ({
 };
 
 export default PostListItem;
+
 const boxShadow = `box-shadow: 0px 2px 4px 2px rgba(46, 41, 51, 0.06), 0px 2px 4px rgba(71, 63, 79, 0.08);`;
+const strongBoxShadow = `box-shadow: 0px 2px 4px 2px rgba(106, 49, 150, .4), 0px 2px 4px rgba(106, 49, 150, 0.4);`;
 
 const PostArticle = styled.article`
   padding: 15px;
   border-radius: 2px;
   transition: all 200ms;
-
-  @media screen and (max-width: 767px) {
-    ${boxShadow}
-  }
+  ${boxShadow}
 
   &:hover {
-    ${boxShadow}
+    ${strongBoxShadow}
   }
 `;
 
@@ -89,12 +70,6 @@ const PostHeader = styled.header`
 const TitleContainer = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
-  margin-left: 20px;
-
-  @media screen and (max-width: 767px) {
-    margin-top: 10px;
-    margin-left: 0;
-  }
 `;
 
 const PostTitle = styled.h1`
@@ -120,14 +95,6 @@ const PostDate = styled.p`
   margin: 0;
   font-size: 16px;
   font-style: italic;
-`;
-
-const PostDateLink = styled(Link)`
-  color: #333;
-
-  &:hover {
-    color: ${brandColorLight};
-  }
 `;
 
 const DescriptionContainer = styled.div`

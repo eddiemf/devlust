@@ -1,6 +1,6 @@
 ---
 title: "Breaking down the Single Responsibility Principle"
-date: "2020-01-07"
+date: "2020-01-18"
 slug: "breaking-down-srp"
 image: "image.jpg"
 thumbnail: "thumbnail.jpg"

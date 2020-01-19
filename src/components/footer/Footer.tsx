@@ -18,7 +18,7 @@ const Footer = () => {
   );
 };
 
-const footerHeight = 80;
+const footerHeight = 60;
 const footerMarginTop = 100;
 export const footerTotalHeight = footerHeight + footerMarginTop;
 
