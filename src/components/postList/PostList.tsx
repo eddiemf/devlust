@@ -27,9 +27,7 @@ const PostList = ({ posts }: PostListProps) => {
         </StyledPostList>
       )}
 
-      {!hasPosts && (
-        <p>There are no posts yet :(</p>
-      )}
+      {!hasPosts && <p>There are no posts yet :(</p>}
     </Container>
   );
 };
