@@ -46,6 +46,10 @@ const SEO: FunctionComponent<Props> = ({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          name: `google-site-verification`,
+          content: '1wVJrKenhOKmDFZ3vWbY4OXkF2C2A74ak4N0gUo4Bf8',
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
