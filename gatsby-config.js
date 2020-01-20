@@ -66,5 +66,11 @@ module.exports = {
         shortname: `DevLust`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-156570109-1',
+      },
+    },
   ],
 };
