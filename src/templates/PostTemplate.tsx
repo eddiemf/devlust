@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from '../components/container';
 import Layout from '../components/layout';
-import DateFormatter from '../components/postListItem/DateFormatter';
+import DateFormatter from '../components/postCard/DateFormatter';
 import SEO from '../components/seo';
 import { brandColor } from '../theme/colors';
 import { parsePostNode } from '../utils/dataParsers';
