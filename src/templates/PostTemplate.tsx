@@ -4,10 +4,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from '../components/container';
 import Layout from '../components/layout';
-import DateFormatter from '../components/postListItem/DateFormatter';
+import DateFormatter from '../components/postCard/DateFormatter';
 import SEO from '../components/seo';
 import { brandColor } from '../theme/colors';
-import { parsePostNode } from '../utils/dataParsers';
+import PostParser from '../utils/PostParser';
 
 interface PostTemplateProps {
   data: {
@@ -24,20 +24,14 @@ export const query = graphql`
         slug
         title
         excerpt
-        image {
-          childImageSharp {
-            fluid(maxWidth: 770) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
+      fileAbsolutePath
     }
   }
 `;
 
 const PostTemplate = ({ data }: PostTemplateProps) => {
-  const post = parsePostNode(data.markdownRemark);
+  const post = PostParser.parsePostNode(data.markdownRemark);
   const dateFormatter = new DateFormatter({ date: post.date });
 
   return (
@@ -47,7 +41,17 @@ const PostTemplate = ({ data }: PostTemplateProps) => {
       <Container>
         <PostHeader>
           <Title>{post.title}</Title>
-          <Date>{dateFormatter.format()}</Date>
+          <PostMeta>
+            <Date>{dateFormatter.format()}</Date>
+            <MetaSeparator>|</MetaSeparator>
+            <LinkToEdit
+              href={post.urlToEdit}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edit on Github
+            </LinkToEdit>
+          </PostMeta>
           <Excerpt>{post.excerpt}</Excerpt>
         </PostHeader>
         <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -137,10 +141,30 @@ const Title = styled.h1`
   margin-bottom: 10px;
 `;
 
+const PostMeta = styled.div`
+  display: flex;
+
+  @media screen and (max-width: 370px) {
+    display: block;
+  }
+`;
+
+const MetaSeparator = styled.span`
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media screen and (max-width: 370px) {
+    display: none;
+  }
+`;
+
 const Date = styled.p`
   margin: 0;
   font-style: italic;
 `;
+
+const LinkToEdit = styled.a``;
 
 const Excerpt = styled.p`
   font-style: italic;
