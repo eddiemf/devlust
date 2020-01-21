@@ -1,11 +1,10 @@
-import React from 'react';
 import { graphql } from 'gatsby';
+import React from 'react';
 import styled from 'styled-components';
-
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import PostList from '../components/postList';
-import { parsePostsData } from '../utils/dataParsers';
+import SEO from '../components/seo';
+import PostParser from '../utils/PostParser';
 
 interface IndexPageProps {
   data: {
@@ -27,21 +26,8 @@ export const query = graphql`
             slug
             title
             excerpt
-            image {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            thumbnail {
-              childImageSharp {
-                fixed {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
           }
+          fileAbsolutePath
         }
       }
     }
@@ -49,7 +35,7 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }: IndexPageProps) => {
-  const posts = parsePostsData(data.allMarkdownRemark);
+  const posts = PostParser.parsePostEdges(data.allMarkdownRemark.edges);
 
   return (
     <Layout>

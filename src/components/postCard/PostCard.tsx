@@ -9,11 +9,6 @@ interface PostListItemProps {
   date: string;
   slug: string;
   excerpt: string;
-  thumbnail: {
-    childImageSharp: {
-      fixed: FixedObject;
-    };
-  };
 }
 
 const PostCard = ({ title, date, slug, excerpt }: PostListItemProps) => {

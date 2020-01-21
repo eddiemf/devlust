@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { PostData } from '../../utils/PostParser';
 import Container from '../container';
 import PostCard from '../postCard';
 
 interface PostListProps {
-  posts: [Post];
+  posts: PostData[];
 }
 
 const PostList = ({ posts }: PostListProps) => {
@@ -13,12 +14,11 @@ const PostList = ({ posts }: PostListProps) => {
     <Container>
       {hasPosts && (
         <StyledPostList>
-          {posts.map(({ date, slug, excerpt, thumbnail, title }) => (
+          {posts.map(({ date, slug, excerpt, title }) => (
             <PostCard
               key={slug}
               date={date}
               slug={slug}
-              thumbnail={thumbnail}
               title={title}
               excerpt={excerpt}
             />

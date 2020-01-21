@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import styledNormalize from 'styled-normalize';
-
 import { brandColor } from './colors';
 
 export const GlobalStyles = createGlobalStyle`
