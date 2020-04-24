@@ -24,7 +24,8 @@ export default class PostParser {
   }
 
   private static parseFilePathToGithubUrl(absoluteFilePath: string): string {
-    const relativeFilePath = absoluteFilePath.split('/devlust/')[1];
+    const pathStartIndex = absoluteFilePath.indexOf('src/posts/');
+    const relativeFilePath = absoluteFilePath.substr(pathStartIndex);
     return `https://github.com/eddiemf/devlust/blob/develop/${relativeFilePath}`;
   }
 }
