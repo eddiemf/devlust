@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import logo from '../../static/devlust.jpg';
 
 interface Meta {
   name: string;
@@ -29,6 +28,9 @@ const SEO: FunctionComponent<Props> = ({
             title
             description
             author
+            url
+            logo
+            twitterUsername
           }
         }
       }
@@ -41,7 +43,7 @@ const SEO: FunctionComponent<Props> = ({
     titleProps.title = title;
     titleProps.titleTemplate = `%s | ${site.siteMetadata.title}`;
   } else {
-    titleProps.title = `Putting all the lust into web development | ${site.siteMetadata.title}`;
+    titleProps.title = `${site.siteMetadata.title} – Putting all the lust into web development`;
   }
 
   return (
@@ -69,7 +71,7 @@ const SEO: FunctionComponent<Props> = ({
         },
         {
           property: `og:image`,
-          content: logo,
+          content: `${site.siteMetadata.url}${site.siteMetadata.logo}`,
         },
         {
           property: `og:type`,
@@ -81,11 +83,11 @@ const SEO: FunctionComponent<Props> = ({
         },
         {
           name: `twitter:site`,
-          content: `@_mauriciofarias`,
+          content: site.siteMetadata.twitterUsername,
         },
         {
           name: `twitter:creator`,
-          content: `@_mauriciofarias`,
+          content: site.siteMetadata.twitterUsername,
         },
         {
           name: `twitter:title`,
@@ -97,7 +99,7 @@ const SEO: FunctionComponent<Props> = ({
         },
         {
           name: `twitter:image`,
-          content: logo,
+          content: `${site.siteMetadata.url}${site.siteMetadata.logo}`,
         },
       ].concat(meta)}
     />
