@@ -152,7 +152,8 @@ const PostContent = styled.div`
     }
   }
 
-  img {
+  img,
+  video {
     display: block;
     max-width: 100%;
     margin-left: auto;

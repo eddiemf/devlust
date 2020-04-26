@@ -28,7 +28,9 @@ The main problem with that thought process is to assume that the button is actua
 
 Below you can see an animated representation of the event capturing phase flow when a button is clicked, with the yellow dot representing the event and how it traverses the DOM tree.
 
-![Animated representation of the capturing phase](event-capturing-flow.gif)
+<video autoplay loop>
+  <source src="event-capturing-flow.mp4" />
+</video>
 
 Whenever an event such as a click on a button is triggered, the DOM needs to move that yellow dot all the way from the `<html>` element down to the clicked button element.
 
@@ -36,7 +38,9 @@ During the capturing phase the yellow dot needs to go through each element until
 
 In the animation below you can see that even though the `<dialog>` element has a listener set on the `onclick` event, it won't be called during the capturing phase because that's not the default behavior. It would be called only if you would explicitly configure the listener to be called during the capturing phase.
 
-![Animated representation of the capturing phase](event-capturing-flow-2.gif)
+<video autoplay loop>
+  <source src="event-capturing-flow-2.mp4" />
+</video>
 
 **The propagation of the event all the way from the top element down to the event target while checking and calling listeners is what we call event capturing phase**.
 
@@ -64,7 +68,9 @@ During its way up, the event will still be checking each element for an attached
 
 Check the animation below representing the bubbling phase, and if the pop-up bug was still a mystery for you, I'm certain that it will make total sense now.
 
-![Representation of the event bubbling phase](event-bubbling-flow.gif)
+<video autoplay loop>
+  <source src="event-bubbling-flow.mp4" />
+</video>
 
 **The propagation of the event all the way from the event target up to the `<html>` while checking and calling listeners is what we call event bubbling phase.**
 
