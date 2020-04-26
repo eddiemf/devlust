@@ -154,6 +154,7 @@ const PostContent = styled.div`
 
   img {
     display: block;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
