@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import { Disqus } from 'gatsby-plugin-disqus';
 import React from 'react';
 import styled from 'styled-components';
 import Container from '../components/container';
@@ -12,11 +11,17 @@ import PostParser from '../utils/PostParser';
 interface PostTemplateProps {
   data: {
     markdownRemark: any;
+    site: any;
   };
 }
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        url
+      }
+    }
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -55,13 +60,12 @@ const PostTemplate = ({ data }: PostTemplateProps) => {
           <Excerpt>{post.excerpt}</Excerpt>
         </PostHeader>
         <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Disqus
-          config={{
-            url: `https://devlust.io/${post.slug}`,
-            identifier: post.slug,
-            title: post.title,
-          }}
-        />
+        <TwitterLink
+          href={`https://twitter.com/search?q=${data.site.siteMetadata.url}${post.slug}`}
+          target="_blank"
+        >
+          Discuss on Twitter
+        </TwitterLink>
       </Container>
     </Layout>
   );
@@ -207,4 +211,8 @@ const LinkToEdit = styled.a``;
 
 const Excerpt = styled.p`
   font-style: italic;
+`;
+
+const TwitterLink = styled.a`
+  color: ${brandColor};
 `;
