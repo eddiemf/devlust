@@ -91,6 +91,10 @@ const SEO: FunctionComponent<Props> = ({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: `twitter:image`,
+          content: logo,
+        },
       ].concat(meta)}
     />
   );
