@@ -61,7 +61,7 @@ const SEO: FunctionComponent<Props> = ({
         },
         {
           property: `og:title`,
-          content: title,
+          content: title || titleProps.title,
         },
         {
           property: `og:description`,
@@ -80,19 +80,23 @@ const SEO: FunctionComponent<Props> = ({
           content: `summary`,
         },
         {
+          name: `twitter:site`,
+          content: `@_mauriciofarias`,
+        },
+        {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@_mauriciofarias`,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title || titleProps.title,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
         {
-          property: `twitter:image`,
+          name: `twitter:image`,
           content: logo,
         },
       ].concat(meta)}
