@@ -93,10 +93,15 @@ const PostContent = styled.div`
   }
 
   h1,
-  h2 {
+  h2,
+  h3 {
     position: relative;
     margin-bottom: 40px;
     color: ${brandColor};
+  }
+
+  h1,
+  h2 {
     ${underlined}
 
     &:after {
@@ -107,7 +112,12 @@ const PostContent = styled.div`
     }
   }
 
-  a {
+  h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  a:not(.gatsby-resp-image-link) {
     ${underlined}
     &:after {
       height: 2px;
@@ -119,6 +129,33 @@ const PostContent = styled.div`
     padding-right: 8px;
     background-color: ${brandColor};
     color: #fff;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    position: relative;
+    margin: 10px 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: -20px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: ${brandColor};
+    }
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
