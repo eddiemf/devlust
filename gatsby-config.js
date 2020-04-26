@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `DevLust`,
-    description: `Putting all the lust in web development`,
+    description: `DevLust is a programming blog created by Mauricio Dziedzinski with the purpose of helping developers out there with well written articles and top notch content.`,
     author: `Mauricio Dziedzinski`,
   },
   plugins: [

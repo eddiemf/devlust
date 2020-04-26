@@ -39,7 +39,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO />
 
       <PostsSection>
         <PostList posts={posts} />

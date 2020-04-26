@@ -8,7 +8,7 @@ const Header: FunctionComponent = () => {
   return (
     <StyledHeader>
       <HeaderContainer>
-        <Link to="/">
+        <Link to="/" title="DevLust">
           <DevLustLogo width={200} />
         </Link>
         <HeaderNav>{/* <Link to="/info">Info</Link> */}</HeaderNav>

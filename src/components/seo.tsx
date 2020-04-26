@@ -12,14 +12,14 @@ interface Props {
   description?: string;
   lang?: string;
   meta?: Meta[];
-  title: string;
+  title?: string;
 }
 
 const SEO: FunctionComponent<Props> = ({
   description = '',
   lang = 'en',
   meta = [],
-  title,
+  title = '',
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -36,14 +36,20 @@ const SEO: FunctionComponent<Props> = ({
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const titleProps = {} as any;
+  if (title) {
+    titleProps.title = title;
+    titleProps.titleTemplate = `%s | ${site.siteMetadata.title}`;
+  } else {
+    titleProps.title = `Putting all the lust into web development | ${site.siteMetadata.title}`;
+  }
 
   return (
     <Helmet
+      {...titleProps}
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `google-site-verification`,
