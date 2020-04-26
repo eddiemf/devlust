@@ -28,7 +28,7 @@ The main problem with that thought process is to assume that the button is actua
 
 Below you can see an animated representation of the event capturing phase flow when a button is clicked, with the yellow dot representing the event and how it traverses the DOM tree.
 
-<video autoplay loop>
+<video autoplay loop playsinline muted>
   <source src="event-capturing-flow.mp4" />
 </video>
 
@@ -38,7 +38,7 @@ During the capturing phase the yellow dot needs to go through each element until
 
 In the animation below you can see that even though the `<dialog>` element has a listener set on the `onclick` event, it won't be called during the capturing phase because that's not the default behavior. It would be called only if you would explicitly configure the listener to be called during the capturing phase.
 
-<video autoplay loop>
+<video autoplay loop playsinline muted>
   <source src="event-capturing-flow-2.mp4" />
 </video>
 
@@ -68,7 +68,7 @@ During its way up, the event will still be checking each element for an attached
 
 Check the animation below representing the bubbling phase, and if the pop-up bug was still a mystery for you, I'm certain that it will make total sense now.
 
-<video autoplay loop>
+<video autoplay loop playsinline muted>
   <source src="event-bubbling-flow.mp4" />
 </video>
 
