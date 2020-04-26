@@ -4,6 +4,7 @@ module.exports = {
     description: `DevLust is a programming blog created by Mauricio Dziedzinski with the purpose of helping developers out there with well written articles and top notch content.`,
     author: `Mauricio Dziedzinski`,
     logo: `devlust.jpg`,
+    ballLogo: `devlust-ball-logo.png`,
     url: `https://devlust.io/`,
     twitterUsername: `@_mauriciofarias`,
   },

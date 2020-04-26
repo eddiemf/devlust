@@ -30,6 +30,7 @@ const SEO: FunctionComponent<Props> = ({
             author
             url
             logo
+            ballLogo
             twitterUsername
           }
         }
@@ -99,7 +100,7 @@ const SEO: FunctionComponent<Props> = ({
         },
         {
           name: `twitter:image`,
-          content: `${site.siteMetadata.url}${site.siteMetadata.logo}`,
+          content: `${site.siteMetadata.url}${site.siteMetadata.ballLogo}`,
         },
       ].concat(meta)}
     />
