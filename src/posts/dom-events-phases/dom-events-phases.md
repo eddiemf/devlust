@@ -1,5 +1,5 @@
 ---
-title: 'The DOM Events phases'
+title: 'The phases of DOM Events'
 date: '2020-04-26'
 slug: 'dom-events-phases'
 image: 'image.jpg'
