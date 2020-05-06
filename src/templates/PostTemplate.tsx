@@ -61,7 +61,7 @@ const PostTemplate = ({ data }: PostTemplateProps) => {
         </PostHeader>
         <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
         <TwitterLink
-          href={`https://twitter.com/search?q=${data.site.siteMetadata.url}${post.slug}`}
+          href={`https://twitter.com/search?q=${data.site.siteMetadata.url}${post.slug}&f=live`}
           target="_blank"
         >
           Discuss on Twitter
