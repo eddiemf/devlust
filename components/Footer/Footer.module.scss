@@ -1,0 +1,18 @@
+@import './Variables.scss';
+@import '../Layout/Variables.scss';
+
+.footer {
+	display: grid;
+	align-items: center;
+	height: $footer-height;
+	margin-top: $footer-margin-top;
+	box-shadow: 0px -2px 4px 2px rgba(46, 41, 51, 0.06), 0px -2px 4px rgba(71, 63, 79, 0.08);
+}
+
+.link {
+	display: inline;
+
+	&:hover {
+		color: $brand-color;
+	}
+}

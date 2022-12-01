@@ -1,0 +1,156 @@
+@import '../Layout/Variables.scss';
+
+@mixin underlined {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 1px;
+		width: 100%;
+		background-color: $brand-color;
+	}
+}
+
+.content {
+	line-height: 1.6;
+	margin-bottom: 100px;
+	@include underlined;
+
+	&:after {
+		bottom: -50px;
+	}
+
+	h1,
+	h2,
+	h3 {
+		position: relative;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		color: $brand-color;
+	}
+
+	h1,
+	h2 {
+		@include underlined;
+
+		&:after {
+			bottom: -5px;
+			height: 3px;
+			width: 50px;
+			border-radius: 8px;
+		}
+	}
+
+	h3 {
+		margin-bottom: 20px;
+		font-size: 22px;
+	}
+
+	a:not(.gatsby-resp-image-link) {
+		@include underlined;
+		&:after {
+			height: 2px;
+		}
+	}
+
+	pre[class*='language-'] {
+		border-radius: 10px;
+	}
+
+	.language-text {
+		padding-left: 8px;
+		padding-right: 8px;
+		background-color: $brand-color;
+		color: #fff;
+	}
+
+	ul {
+		padding-left: 20px;
+	}
+
+	li {
+		position: relative;
+		margin: 10px 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 12px;
+			left: -20px;
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: $brand-color;
+		}
+	}
+
+	img,
+	video {
+		display: block;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	img {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+.header {
+	position: relative;
+	margin-bottom: 80px;
+	line-height: 1.6;
+	@include underlined;
+
+	&:after {
+		bottom: -40px;
+	}
+}
+
+.title {
+	color: $brand-color;
+	font-size: 32px;
+	line-height: 1.2;
+	margin-top: 0;
+	margin-bottom: 0px;
+}
+
+.meta {
+	display: flex;
+	margin-bottom: 5px;
+
+	@media screen and (max-width: 370px) {
+		display: block;
+	}
+}
+
+.metaSeparator {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+
+	@media screen and (max-width: 370px) {
+		display: none;
+	}
+}
+
+.date {
+	margin: 0;
+	font-style: italic;
+}
+
+// const LinkToEdit = styled.a``;
+
+.excerpt {
+	font-style: italic;
+}
+
+.titter-link {
+	color: $brand-color;
+}

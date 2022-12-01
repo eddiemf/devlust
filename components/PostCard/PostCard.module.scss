@@ -1,0 +1,63 @@
+@import '../Layout/Variables.scss';
+
+.post {
+	border-radius: 2px;
+	transition: box-shadow 400ms;
+	box-shadow: $box-shadow-standard;
+
+	&:hover {
+		box-shadow: $box-shadow-strong;
+	}
+}
+
+.link {
+	display: block;
+	padding: 15px;
+	color: #333;
+
+	&:hover .title {
+		color: $brand-color;
+	}
+}
+
+.header {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-auto-flow: column;
+
+	@media screen and (max-width: 767px) {
+		display: block;
+	}
+}
+
+.titleContainer {
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+.title {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 32px;
+	line-height: 1.2;
+	transition: color 400ms;
+
+	@media screen and (max-width: 767px) {
+		font-size: 26px;
+	}
+}
+
+.date {
+	margin: 0;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.descriptionContainer {
+	margin-top: 10px;
+
+	p {
+		line-height: 1.6;
+		font-weight: 300;
+	}
+}
