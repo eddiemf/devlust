@@ -29,7 +29,7 @@ export const Post = ({ content, date, excerpt, slug, title, editUrl }: IProps) =
 			<div className={styles.content} dangerouslySetInnerHTML={{ __html: content }} />
 
 			<a
-				href={`https://twitter.com/search?q=siteMetaData${slug}&f=live`}
+				href={`https://twitter.com/search?q=https://devlust.io/${slug}&f=live`}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
