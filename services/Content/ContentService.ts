@@ -1,3 +1,4 @@
+import { config } from '../../config';
 import { IPost, IPostData } from '../../interfaces/Post';
 import { formatDate } from './formatDate';
 
@@ -48,7 +49,7 @@ export const contentServiceFactory = ({
 					slug: postData.slug,
 					excerpt: postData.excerpt,
 					content: postData.content,
-					editUrl: '',
+					editUrl: `${config.githubPostsUrl}/${postData.slug}/index.md`,
 					isDraft: postData.isDraft,
 				};
 			} catch (error) {

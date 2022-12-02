@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import { Container } from '../Layout/Container';
 import styles from './Post.module.scss';
 
